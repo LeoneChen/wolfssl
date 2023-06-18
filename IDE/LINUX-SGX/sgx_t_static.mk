@@ -117,7 +117,7 @@ endif
 
 
 Flags_Just_For_C := -Wno-implicit-function-declaration -std=c11
-Common_C_Cpp_Flags := $(SGX_COMMON_CFLAGS) -nostdinc -fvisibility=hidden -fpie -fstack-protector $(Wolfssl_Include_Paths) -fno-builtin-printf -I.
+Common_C_Cpp_Flags := $(SGX_COMMON_CFLAGS) -fvisibility=hidden -fPIC -fstack-protector $(Wolfssl_Include_Paths) -fno-builtin-printf -I.
 Wolfssl_C_Flags := $(Flags_Just_For_C) $(Common_C_Cpp_Flags) $(Wolfssl_C_Extra_Flags)
 
 Wolfssl_Link_Flags := $(SGX_COMMON_CFLAGS) -Wl,--no-undefined -nostdlib -nodefaultlibs -nostartfiles -L$(SGX_LIBRARY_PATH) \
